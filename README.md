@@ -1,3 +1,4 @@
+<img src="https://github.com/AtsKotzen/impact-trip/blob/main/assets/icon.png" width=300 heigth=300>
 # Impact Trip
 Calculadora para pagamento de compensação de emissão de carbono resultante de atividades turísticas.
 
