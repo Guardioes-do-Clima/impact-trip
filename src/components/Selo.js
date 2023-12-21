@@ -2,12 +2,12 @@
 import React from "react";
 import { View, Image } from "react-native";
 import { styles } from "../styles";
-import logo from "../assets/images/banner_top_app.png";
+import selo from "../assets/images/logog_mecenas_h.png";
 
-export function Logo() {
+export function Selo() {
     return (
         <View style={styles.logoContainer}>
-        <Image source={logo} style={styles.logo} />
+        <Image source={selo} style={styles.selo} />
         </View>
     );
     }

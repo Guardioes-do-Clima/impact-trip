@@ -27,13 +27,19 @@ export const styles = StyleSheet.create({
       logoContainer: {
         //justifyContent: "center",
         alignItems: "center",
-        marginBottom: 10,
+        marginBottom: 1,
     },
       logo: {
-        width: 112,
-        height: 112,
+        width: 300,
+        height: 100,
         resizeMode: "contain",
-        marginTop: 10,
+        //marginTop: 1,
+    },
+      selo: {
+        width: 180,
+        height: 80,
+        resizeMode: "contain",
+        //marginTop: 1,
     },
     airEmissionLogo:{
       width: 150,

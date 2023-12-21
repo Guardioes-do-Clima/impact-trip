@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, Button, Modal, StyleSheet } from "react-native";
-import { Logo } from "./Logo";
+import { Selo } from "./Selo";
 
 export function ReportModal({
   reportVisible,
@@ -28,7 +28,7 @@ export function ReportModal({
           <Text style={styles.text}>Compensando:</Text>
           <Text style={styles.valorDetails}>{`R$ ${valorCompensacao}`}</Text>
           <View style={styles.greenFootPrintContainer}>
-            <Logo />
+            <Selo />
             <Text style={styles.text}>Chave Pix(CNPJ)</Text>
             <Text>091114500001-26</Text>
           </View>

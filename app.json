@@ -22,15 +22,16 @@
         "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.atskotzen.impact-trip"
+      "package": "com.atskotzen.impacttrip"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "extra": {
       "eas": {
-        
+        "projectId": "04b69c69-83e8-403c-89dd-9cb5bf86ec4a"
       }
-    }
+    },
+    "owner": "atskotzen"
   }
 }

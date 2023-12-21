@@ -152,7 +152,7 @@ const SomenteIda = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 10,
+    padding: 5,
   },
   label: {
     fontSize: 15,
