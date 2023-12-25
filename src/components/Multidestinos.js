@@ -9,7 +9,7 @@ import {
   ScrollView,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import Trecho from "./Trecho";
+import Trecho from "./AddTrecho";
 import ReportModal from "./ReportModal";
 import data from '../malha_aerea3';
 
@@ -58,9 +58,9 @@ export default function Multidestinos() {
       somatorio.florestaProtegida += parseFloat(resultadoTrecho.florestaProtegida);
     });
   
-    setCO2EmitidoValue(somatorio.co2EmitidoValue);
-    setFlorestaProtegida(somatorio.florestaProtegida);
-    setValorCompensacao(somatorio.valorCompensacao);
+    setCO2EmitidoValue(somatorio.co2EmitidoValue.toFixed(2));
+    setFlorestaProtegida(somatorio.florestaProtegida.toFixed(1));
+    setValorCompensacao(somatorio.valorCompensacao.toFixed(2));
     setReportModalVisible(true);
   };
 

@@ -2,7 +2,7 @@
   "expo": {
     "name": "impact-trip",
     "slug": "impact-trip",
-    "version": "1.0.0",
+    "version": "2.0.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -18,6 +18,7 @@
       "supportsTablet": true
     },
     "android": {
+      "versionCode": 3,
       "adaptiveIcon": {
         "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#ffffff"
@@ -32,6 +33,12 @@
         "projectId": "04b69c69-83e8-403c-89dd-9cb5bf86ec4a"
       }
     },
-    "owner": "atskotzen"
+    "owner": "atskotzen",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/04b69c69-83e8-403c-89dd-9cb5bf86ec4a"
+    }
   }
 }

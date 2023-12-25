@@ -1,10 +1,10 @@
-// Trecho.js
+// AddTrecho.js
 import React, { useState } from 'react';
 import { View, Text, Button, FlatList, TouchableOpacity, StyleSheet } from 'react-native';
 import SearchBar from './SearchBar';
 import data from '../malha_aerea3'; 
 
-const Trecho = ({ onSalvarTrecho }) => {
+const AddTrecho = ({ onSalvarTrecho }) => {
   const [origem, setOrigem] = useState("");
   const [destino, setDestino] = useState("");
   const [opcoesOrigem, setOpcoesOrigem] = useState([]);
@@ -158,4 +158,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Trecho;
+export default AddTrecho;
