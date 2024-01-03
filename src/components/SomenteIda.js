@@ -27,6 +27,10 @@ const SomenteIda = () => {
     setModalVisible(false);
   };
 
+  const dismissKeyboard = () => {
+    Keyboard.dismiss();
+  };
+
   const filtrarOpcoesOrigem = (texto) => {
     if (texto.length >= 3) {
       let opcoesFiltradas = [
@@ -40,6 +44,7 @@ const SomenteIda = () => {
       ];
 
       setOpcoesOrigem(opcoesFiltradas);
+      dismissKeyboard();
     } else {
       setOpcoesOrigem([]);
     }
@@ -58,6 +63,7 @@ const SomenteIda = () => {
       ];
 
       setOpcoesDestino(opcoesFiltradas);
+      dismissKeyboard();
     } else {
       setOpcoesDestino([]);
     }
@@ -105,8 +111,7 @@ const SomenteIda = () => {
         />
         {opcoesOrigem.length > 0 && (
           <FlatList
-            data={opcoesOrigem}
-            onViewableItemsChanged={() => Keyboard.dismiss()}
+            data={opcoesOrigem}           
             renderItem={({ item }) => (
               <TouchableOpacity onPress={() => selecionarOrigem(item)}>
                 <Text style={styles.optionText}>{item}</Text>
@@ -126,8 +131,7 @@ const SomenteIda = () => {
         />
         {opcoesDestino.length > 0 && (
           <FlatList
-            data={opcoesDestino}
-            onViewableItemsChanged={() => Keyboard.dismiss()}
+            data={opcoesDestino}            
             renderItem={({ item }) => (
               <TouchableOpacity onPress={() => selecionarDestino(item)}>
                 <Text style={styles.optionText}>{item}</Text>

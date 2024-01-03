@@ -23,6 +23,7 @@ const AddTrecho = ({ onSalvarTrecho }) => {
       ];
 
       setOpcoesOrigem(opcoesFiltradas);
+      dismissKeyboard();
     } else {
       setOpcoesOrigem([]);
     }
@@ -41,6 +42,7 @@ const AddTrecho = ({ onSalvarTrecho }) => {
       ];
 
       setOpcoesDestino(opcoesFiltradas);
+      dismissKeyboard();
     } else {
       setOpcoesDestino([]);
     }
@@ -63,7 +65,11 @@ const AddTrecho = ({ onSalvarTrecho }) => {
     } else {
       alert('Por favor, preencha ambas as cidades antes de salvar o trecho.');
     }
-  };  
+  };
+
+  const dismissKeyboard = () => {
+    Keyboard.dismiss();
+  };
 
   return (
     <View style={styles.container}>
@@ -79,8 +85,7 @@ const AddTrecho = ({ onSalvarTrecho }) => {
         />
         {opcoesOrigem.length > 0 && (
           <FlatList
-            data={opcoesOrigem}
-            onViewableItemsChanged={() => Keyboard.dismiss()}
+            data={opcoesOrigem}            
             renderItem={({ item }) => (
               <TouchableOpacity onPress={() => selecionarOrigem(item)}>
                 <Text style={styles.optionText}>{item}</Text>
@@ -100,8 +105,7 @@ const AddTrecho = ({ onSalvarTrecho }) => {
         />
         {opcoesDestino.length > 0 && (
           <FlatList
-            data={opcoesDestino}
-            onViewableItemsChanged={() => Keyboard.dismiss()}
+            data={opcoesDestino}            
             renderItem={({ item }) => (
               <TouchableOpacity onPress={() => selecionarDestino(item)}>
                 <Text style={styles.optionText}>{item}</Text>
