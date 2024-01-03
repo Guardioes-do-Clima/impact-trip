@@ -7,6 +7,7 @@ import {
   FlatList,
   TouchableOpacity,
   StyleSheet,
+  Keyboard
 } from "react-native";
 import SearchBar from "./SearchBar";
 import ReportModal from "./ReportModal";
@@ -105,6 +106,7 @@ const IdaEVolta = () => {
         {opcoesOrigem.length > 0 && (
           <FlatList
             data={opcoesOrigem}
+            onViewableItemsChanged={() => Keyboard.dismiss()}
             renderItem={({ item }) => (
               <TouchableOpacity onPress={() => selecionarOrigem(item)}>
                 <Text style={styles.optionText}>{item}</Text>
@@ -125,6 +127,7 @@ const IdaEVolta = () => {
         {opcoesDestino.length > 0 && (
           <FlatList
             data={opcoesDestino}
+            onViewableItemsChanged={() => Keyboard.dismiss()}
             renderItem={({ item }) => (
               <TouchableOpacity onPress={() => selecionarDestino(item)}>
                 <Text style={styles.optionText}>{item}</Text>

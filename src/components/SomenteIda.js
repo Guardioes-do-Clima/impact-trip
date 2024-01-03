@@ -7,6 +7,7 @@ import {
   FlatList,
   TouchableOpacity,
   StyleSheet,
+  Keyboard
 } from "react-native";
 import SearchBar from "./SearchBar";
 import ReportModal from "./ReportModal";
@@ -105,6 +106,7 @@ const SomenteIda = () => {
         {opcoesOrigem.length > 0 && (
           <FlatList
             data={opcoesOrigem}
+            onViewableItemsChanged={() => Keyboard.dismiss()}
             renderItem={({ item }) => (
               <TouchableOpacity onPress={() => selecionarOrigem(item)}>
                 <Text style={styles.optionText}>{item}</Text>
@@ -116,7 +118,7 @@ const SomenteIda = () => {
         <Text style={styles.label}>Indo para:</Text>
         <SearchBar
           placeholder="Destino"
-          value={destino}
+          value={destino}          
           onChangeText={(text) => {
             setDestino(text);
             filtrarOpcoesDestino(text);
@@ -125,6 +127,7 @@ const SomenteIda = () => {
         {opcoesDestino.length > 0 && (
           <FlatList
             data={opcoesDestino}
+            onViewableItemsChanged={() => Keyboard.dismiss()}
             renderItem={({ item }) => (
               <TouchableOpacity onPress={() => selecionarDestino(item)}>
                 <Text style={styles.optionText}>{item}</Text>

@@ -1,6 +1,6 @@
 // AddTrecho.js
 import React, { useState } from 'react';
-import { View, Text, Button, FlatList, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, Button, FlatList, TouchableOpacity, StyleSheet, Keyboard } from 'react-native';
 import SearchBar from './SearchBar';
 import data from '../malha_aerea3'; 
 
@@ -80,6 +80,7 @@ const AddTrecho = ({ onSalvarTrecho }) => {
         {opcoesOrigem.length > 0 && (
           <FlatList
             data={opcoesOrigem}
+            onViewableItemsChanged={() => Keyboard.dismiss()}
             renderItem={({ item }) => (
               <TouchableOpacity onPress={() => selecionarOrigem(item)}>
                 <Text style={styles.optionText}>{item}</Text>
@@ -100,6 +101,7 @@ const AddTrecho = ({ onSalvarTrecho }) => {
         {opcoesDestino.length > 0 && (
           <FlatList
             data={opcoesDestino}
+            onViewableItemsChanged={() => Keyboard.dismiss()}
             renderItem={({ item }) => (
               <TouchableOpacity onPress={() => selecionarDestino(item)}>
                 <Text style={styles.optionText}>{item}</Text>

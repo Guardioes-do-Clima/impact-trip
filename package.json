@@ -1,6 +1,6 @@
 {
   "name": "impact-trip",
-  "version": "2.0.1",
+  "version": "2.0.3",
   "author": "Athus Linhares Oliveira",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
