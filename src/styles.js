@@ -3,6 +3,7 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
     colors: {
       primary: "#26944d",
+      secondary: "#9BC265"
     },
     scrollViewContainer: {
         flexGrow: 1,

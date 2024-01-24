@@ -89,10 +89,11 @@ export default function Multidestinos() {
       <View style={styles.container}>
         {trechos.map((trecho, index) => (
           <View style={styles.card} key={index}>
-            <Text style={styles.text}>{`#${index + 1} Trecho`}</Text>
+            <Text style={styles.header}>{`#${index + 1} Trecho`}</Text>
             <View style={styles.text}>
-              <Text style={styles.label}>De: {trecho.origem}</Text>
-              <Text style={styles.label}>Para: {trecho.destino}</Text>
+              <Text style={{alignSelf: "center"}}>De: {trecho.origem}</Text>
+              <Text style={{alignSelf: "center"}}>|</Text>
+              <Text style={{alignSelf: "center"}}>Para: {trecho.destino}</Text>
             </View>
           </View>
         ))}
@@ -156,15 +157,15 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
   },
   header: {
-    fontSize: 20,
+    fontSize: 15,
     fontWeight: "bold",
     textAlign: "center",
-    marginVertical: 10,
+    marginVertical: 4,
   },
   card: {
     width: 340,
     backgroundColor: 'white',
-    marginTop: 10,
+    marginTop: 20,
     padding: 10,
     borderRadius: 10,
     shadowColor: '#000',

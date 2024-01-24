@@ -19,7 +19,7 @@ export function ReportModal({
       >
         <View style={styles.modalView}>
           <Text style={styles.modalHeader}>
-            O rastro de Gases de Efeito Estufa deixado por você:
+            O rastro de gases de efeito estufa deixado por você:
           </Text>
           <Text style={styles.valor}>{`${co2EmitidoValue} Kg de CO2`}</Text>
           <Text style={styles.text}>
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     padding: 35,
     alignItems: "center",
-    shadowColor: "#000",
+    shadowColor: "#26944d",
     shadowOffset: {
       width: 0,
       height: 2,
@@ -66,22 +66,24 @@ const styles = StyleSheet.create({
   },
   modalHeader: {
     fontSize: 17,
-    color: "green",
+    color: "#26944d",
     marginBottom: 10,
     textAlign: "center",
   },
   valor: {
     fontSize: 18,
     fontWeight: "bold",
-    color: "red",
+    //color: "#ff5757",
+    color: "#C63E3F",
     marginBottom: 10,
     textAlign: "center",
   },
   text: {
     fontSize: 16,
-    color: "green",
+    color: "#26944d",
     marginBottom: 5,
     textAlign: "center",
+    fontWeight: "bold",
   },
   valorDetails: {
     fontSize: 35,

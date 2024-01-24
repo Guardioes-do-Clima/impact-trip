@@ -42,6 +42,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "center",
+    marginTop: 3,
+    marginBottom: 15,
     backgroundColor: "#fff", // Adicione a cor desejada de fundo
     height: 43,
     width: 340,
@@ -57,7 +59,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: '#26944d',
+    backgroundColor: '#9BC265',
     borderRadius: 10,
     elevation: 5
   },

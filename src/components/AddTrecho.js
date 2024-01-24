@@ -76,7 +76,7 @@ const AddTrecho = ({ onSalvarTrecho }) => {
       <View style={styles.card}>
         <Text style={styles.label}>Saindo de:</Text>
         <SearchBar
-          placeholder="Origem"
+          placeholder="Origem(digite pelo menos 3 caracteres)"
           value={origem}
           onChangeText={(text) => {
             setOrigem(text);
@@ -96,7 +96,7 @@ const AddTrecho = ({ onSalvarTrecho }) => {
         )}
         <Text style={styles.label}>Indo para:</Text>
         <SearchBar
-          placeholder="Destino"
+          placeholder="Destino(digite pelo menos 3 caracteres)"
           value={destino}
           onChangeText={(text) => {
             setDestino(text);
@@ -134,7 +134,8 @@ const styles = StyleSheet.create({
     width: 340,
     height: "auto",
     backgroundColor: "white",
-    marginBottom: 10,
+    marginBottom: 20,
+    marginTop: 20,
     padding: 10,
     borderRadius: 10,
     shadowColor: "#000",

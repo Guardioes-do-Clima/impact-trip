@@ -102,7 +102,7 @@ const SomenteIda = () => {
       <View style={styles.card}>
         <Text style={styles.label}>Saindo de:</Text>
         <SearchBar
-          placeholder="Origem"
+          placeholder="Origem(digite pelo menos 3 caracteres)"
           value={origem}
           onChangeText={(text) => {
             setOrigem(text);
@@ -122,7 +122,7 @@ const SomenteIda = () => {
         )}
         <Text style={styles.label}>Indo para:</Text>
         <SearchBar
-          placeholder="Destino"
+          placeholder="Destino(digite pelo menos 3 caracteres)"
           value={destino}          
           onChangeText={(text) => {
             setDestino(text);
@@ -163,9 +163,9 @@ const styles = StyleSheet.create({
   },
   label: {
     fontSize: 15,
-    //fontWeight: "bold",
+    fontWeight: "bold",
     marginTop: 1,
-    color: "green",
+    color: "#26944d",
   },
   card: {
     width: 340,
