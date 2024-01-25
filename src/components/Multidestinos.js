@@ -98,14 +98,6 @@ export default function Multidestinos() {
           </View>
         ))}
         <View style={styles.actionButtonView}>
-          <View style={styles.addButton}>
-            <Ionicons
-              name="add-circle"
-              size={41}
-              color="#26944d"
-              onPress={abrirModal}
-            />
-          </View>
           {trechos.length > 0 && (
             <View style={styles.removeButton}>
               <Ionicons
@@ -116,6 +108,13 @@ export default function Multidestinos() {
               />
             </View>
           )}
+          <View style={styles.addButton}>
+            <Button
+              title="Adicionar conexão"
+              color="#9BC265"
+              onPress={abrirModal}
+            />
+          </View>
         </View>
         <View style={styles.buttonView}>
           <Button
@@ -164,8 +163,8 @@ const styles = StyleSheet.create({
   },
   card: {
     width: 340,
-    backgroundColor: 'white',
-    marginTop: 20,
+    backgroundColor: '#9BC265',
+    marginTop: 10,
     padding: 10,
     borderRadius: 10,
     shadowColor: '#000',
@@ -186,7 +185,7 @@ const styles = StyleSheet.create({
     color: "black",
   },
   flatList: {
-    maxHeight: 100,
+    maxHeight: 200,
   },
   itemText: {
     padding: 10,
@@ -194,15 +193,17 @@ const styles = StyleSheet.create({
     borderBottomColor: "gray",
   },
   actionButtonView: {
-    flexDirection: "row",
+    //flexDirection: "row",
     justifyContent: "center",
-    marginVertical: 10,
+    marginVertical: 5,
   },
   addButton: {
     marginRight: 10,
+    marginBottom: 5
   },
   removeButton: {
-    marginLeft: 10,
+    alignSelf: "center",
+    marginBottom: 10
   },
   buttonView: {
     marginVertical: 10,

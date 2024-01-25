@@ -102,7 +102,7 @@ const IdaEVolta = () => {
       <View style={styles.card}>
         <Text style={styles.label}>Saindo de:</Text>
         <SearchBar
-          placeholder="Origem(digite pelo menos 3 letras)"
+          placeholder="Origem(digite pelo menos 3 caracteres)"
           value={origem}
           onChangeText={(text) => {
             setOrigem(text);
@@ -122,7 +122,7 @@ const IdaEVolta = () => {
         )}
         <Text style={styles.label}>Indo para:</Text>
         <SearchBar
-          placeholder="Destino(digite pelo menos 3 letras)"
+          placeholder="Destino(digite pelo menos 3 caracteres)"
           value={destino}
           onChangeText={(text) => {
             setDestino(text);

@@ -74,6 +74,7 @@ const AddTrecho = ({ onSalvarTrecho }) => {
   return (
     <View style={styles.container}>
       <View style={styles.card}>
+      <Text style={styles.header}>Nova conexão</Text>
         <Text style={styles.label}>Saindo de:</Text>
         <SearchBar
           placeholder="Origem(digite pelo menos 3 caracteres)"
@@ -123,6 +124,12 @@ const AddTrecho = ({ onSalvarTrecho }) => {
 const styles = StyleSheet.create({
   container: {
     margin: 5,
+  },
+  header: {
+    alignSelf: "center",
+    fontWeight: "bold",
+    color: "#26944d",
+    fontSize: 18
   },
   label: {
     fontSize: 15,
