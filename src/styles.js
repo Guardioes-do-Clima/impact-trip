@@ -28,12 +28,11 @@ export const styles = StyleSheet.create({
       },
       logoContainer: {
         //justifyContent: "center",
-        alignItems: "center",
-        marginBottom: 1,
+        alignItems: "center",        
     },
       logo: {
-        width: 300,
-        height: 100,
+        width: 200,
+        height: 80,
         resizeMode: "contain",
         //marginTop: 1,
     },
