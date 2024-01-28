@@ -1,4 +1,3 @@
-// Multidestinos.js
 import React, { useState } from "react";
 import {
   View,
@@ -87,27 +86,33 @@ export default function Multidestinos() {
   return (
     <ScrollView>
       <View style={styles.container}>
-        {trechos.map((trecho, index) => (
-          <View style={styles.card} key={index}>
-            <Text style={styles.header}>{`#${index + 1} Trecho`}</Text>
-            <View style={styles.text}>
-              <Text style={{alignSelf: "center"}}>De: {trecho.origem}</Text>
-              <Text style={{alignSelf: "center"}}>|</Text>
-              <Text style={{alignSelf: "center"}}>Para: {trecho.destino}</Text>
+        {trechos.length === 0 ? (
+          <View style={styles.emptyView}>
+            <Text style={styles.emptyText}>Clique em Adicionar Conexão para começar...</Text>
+          </View>
+        ) : (
+          trechos.map((trecho, index) => (
+            <View style={styles.card} key={index}>
+              <Text style={styles.header}>{`#${index + 1} Trecho`}</Text>
+              <View style={styles.text}>
+                <Text style={{alignSelf: "center"}}>De: {trecho.origem}</Text>
+                <Text style={{alignSelf: "center"}}>|</Text>
+                <Text style={{alignSelf: "center"}}>Para: {trecho.destino}</Text>
+              </View>
             </View>
-          </View>
-        ))}
-        <View style={styles.actionButtonView}>
-        {trechos.length > 0 && (
-          <View style={styles.removeButton}>
-            <Ionicons
-              name="trash"
-              size={27}
-              color="red"
-              onPress={removerDestino}
-            />
-          </View>
+          ))
         )}
+        <View style={styles.actionButtonView}>
+          {trechos.length > 0 && (
+            <View style={styles.removeButton}>
+              <Ionicons
+                name="trash"
+                size={27}
+                color="red"
+                onPress={removerDestino}
+              />
+            </View>
+          )}
           <View style={styles.addButton}>
             <Button
               title="Adicionar conexão"
@@ -115,14 +120,6 @@ export default function Multidestinos() {
               onPress={abrirModal}
             />
           </View>
-        </View>
-        <View style={styles.buttonView}>
-          <Button
-            style={styles.button}
-            color="#26944d"
-            title="Calcular"
-            onPress={handleCalcular}
-          />
         </View>
         <Modal
           animationType="slide"
@@ -138,12 +135,20 @@ export default function Multidestinos() {
           </View>
         </Modal>
         <ReportModal
-        reportVisible={reportModalVisible}
-        onClose={closeReportModal}
-        co2EmitidoValue={co2EmitidoValue}
-        valorCompensacao={valorCompensacao}
-        areaFlorestaProtegida={florestaProtegida}
-      />
+          reportVisible={reportModalVisible}
+          onClose={closeReportModal}
+          co2EmitidoValue={co2EmitidoValue}
+          valorCompensacao={valorCompensacao}
+          areaFlorestaProtegida={florestaProtegida}
+        />
+        <View style={styles.footerButtonView}>
+          <Button
+            style={styles.button}
+            color="#26944d"
+            title="Calcular"
+            onPress={handleCalcular}
+          />
+        </View>
       </View>
     </ScrollView>
   );
@@ -162,7 +167,7 @@ const styles = StyleSheet.create({
     marginVertical: 4,
   },
   card: {
-    width: 340,
+    width: "auto",
     backgroundColor: '#9BC265',
     marginTop: 10,
     padding: 10,
@@ -173,44 +178,44 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 5,
   },
-  inputSelect: {
-    marginBottom: 10,
-  },
-  textInput: {
-    height: 40,
-    borderColor: "gray",
-    borderWidth: 1,
-    marginBottom: 10,
-    paddingHorizontal: 10,
-    color: "black",
-  },
-  flatList: {
-    maxHeight: 200,
-  },
-  itemText: {
-    padding: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: "gray",
+  text: {
+    flexDirection: "row",
+    justifyContent: "space-around",
   },
   actionButtonView: {
-    //flexDirection: "row",
     justifyContent: "center",
     marginVertical: 5,
   },
   addButton: {
-    marginRight: 10,
+    alignSelf: "center",
     marginBottom: 5
   },
   removeButton: {
     alignSelf: "center",
     marginBottom: 10
   },
-  buttonView: {
-    marginVertical: 10,
-    width: 300,
+  footerButtonView: {
+    position: "fixed" ,  
+    bottom: 0,
+    left: 0,
+    right: 0,
+    marginBottom: 20,
   },
   button: {
     width: 300,
     alignSelf: "center",
+    
+  },
+  emptyView: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 50,
+    marginBottom: 50
+  },
+  emptyText: {
+    fontSize: 16,
+    color: "#555",
+    textAlign: "center",
   },
 });
