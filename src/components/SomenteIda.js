@@ -7,6 +7,7 @@ import {
   FlatList,
   TouchableOpacity,
   StyleSheet,
+  Keyboard
 } from "react-native";
 import SearchBar from "./SearchBar";
 import ReportModal from "./ReportModal";
@@ -26,6 +27,10 @@ const SomenteIda = () => {
     setModalVisible(false);
   };
 
+  const dismissKeyboard = () => {
+    Keyboard.dismiss();
+  };
+
   const filtrarOpcoesOrigem = (texto) => {
     if (texto.length >= 3) {
       let opcoesFiltradas = [
@@ -39,6 +44,7 @@ const SomenteIda = () => {
       ];
 
       setOpcoesOrigem(opcoesFiltradas);
+      dismissKeyboard();
     } else {
       setOpcoesOrigem([]);
     }
@@ -57,6 +63,7 @@ const SomenteIda = () => {
       ];
 
       setOpcoesDestino(opcoesFiltradas);
+      dismissKeyboard();
     } else {
       setOpcoesDestino([]);
     }
@@ -95,7 +102,7 @@ const SomenteIda = () => {
       <View style={styles.card}>
         <Text style={styles.label}>Saindo de:</Text>
         <SearchBar
-          placeholder="Origem"
+          placeholder="Origem(digite pelo menos 3 caracteres)"
           value={origem}
           onChangeText={(text) => {
             setOrigem(text);
@@ -104,7 +111,7 @@ const SomenteIda = () => {
         />
         {opcoesOrigem.length > 0 && (
           <FlatList
-            data={opcoesOrigem}
+            data={opcoesOrigem}           
             renderItem={({ item }) => (
               <TouchableOpacity onPress={() => selecionarOrigem(item)}>
                 <Text style={styles.optionText}>{item}</Text>
@@ -115,8 +122,8 @@ const SomenteIda = () => {
         )}
         <Text style={styles.label}>Indo para:</Text>
         <SearchBar
-          placeholder="Destino"
-          value={destino}
+          placeholder="Destino(digite pelo menos 3 caracteres)"
+          value={destino}          
           onChangeText={(text) => {
             setDestino(text);
             filtrarOpcoesDestino(text);
@@ -124,7 +131,7 @@ const SomenteIda = () => {
         />
         {opcoesDestino.length > 0 && (
           <FlatList
-            data={opcoesDestino}
+            data={opcoesDestino}            
             renderItem={({ item }) => (
               <TouchableOpacity onPress={() => selecionarDestino(item)}>
                 <Text style={styles.optionText}>{item}</Text>
@@ -156,9 +163,9 @@ const styles = StyleSheet.create({
   },
   label: {
     fontSize: 15,
-    //fontWeight: "bold",
+    fontWeight: "bold",
     marginTop: 1,
-    color: "green",
+    color: "#26944d",
   },
   card: {
     width: 340,

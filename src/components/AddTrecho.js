@@ -1,6 +1,6 @@
 // AddTrecho.js
 import React, { useState } from 'react';
-import { View, Text, Button, FlatList, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, Button, FlatList, TouchableOpacity, StyleSheet, Keyboard } from 'react-native';
 import SearchBar from './SearchBar';
 import data from '../malha_aerea3'; 
 
@@ -23,6 +23,7 @@ const AddTrecho = ({ onSalvarTrecho }) => {
       ];
 
       setOpcoesOrigem(opcoesFiltradas);
+      dismissKeyboard();
     } else {
       setOpcoesOrigem([]);
     }
@@ -41,6 +42,7 @@ const AddTrecho = ({ onSalvarTrecho }) => {
       ];
 
       setOpcoesDestino(opcoesFiltradas);
+      dismissKeyboard();
     } else {
       setOpcoesDestino([]);
     }
@@ -63,14 +65,19 @@ const AddTrecho = ({ onSalvarTrecho }) => {
     } else {
       alert('Por favor, preencha ambas as cidades antes de salvar o trecho.');
     }
-  };  
+  };
+
+  const dismissKeyboard = () => {
+    Keyboard.dismiss();
+  };
 
   return (
     <View style={styles.container}>
       <View style={styles.card}>
+      <Text style={styles.header}>Nova conexão</Text>
         <Text style={styles.label}>Saindo de:</Text>
         <SearchBar
-          placeholder="Origem"
+          placeholder="Origem(digite pelo menos 3 caracteres)"
           value={origem}
           onChangeText={(text) => {
             setOrigem(text);
@@ -79,7 +86,7 @@ const AddTrecho = ({ onSalvarTrecho }) => {
         />
         {opcoesOrigem.length > 0 && (
           <FlatList
-            data={opcoesOrigem}
+            data={opcoesOrigem}            
             renderItem={({ item }) => (
               <TouchableOpacity onPress={() => selecionarOrigem(item)}>
                 <Text style={styles.optionText}>{item}</Text>
@@ -90,7 +97,7 @@ const AddTrecho = ({ onSalvarTrecho }) => {
         )}
         <Text style={styles.label}>Indo para:</Text>
         <SearchBar
-          placeholder="Destino"
+          placeholder="Destino(digite pelo menos 3 caracteres)"
           value={destino}
           onChangeText={(text) => {
             setDestino(text);
@@ -99,7 +106,7 @@ const AddTrecho = ({ onSalvarTrecho }) => {
         />
         {opcoesDestino.length > 0 && (
           <FlatList
-            data={opcoesDestino}
+            data={opcoesDestino}            
             renderItem={({ item }) => (
               <TouchableOpacity onPress={() => selecionarDestino(item)}>
                 <Text style={styles.optionText}>{item}</Text>
@@ -118,6 +125,12 @@ const styles = StyleSheet.create({
   container: {
     margin: 5,
   },
+  header: {
+    alignSelf: "center",
+    fontWeight: "bold",
+    color: "#26944d",
+    fontSize: 18
+  },
   label: {
     fontSize: 15,
     //fontWeight: "bold",
@@ -128,7 +141,8 @@ const styles = StyleSheet.create({
     width: 340,
     height: "auto",
     backgroundColor: "white",
-    marginBottom: 10,
+    marginBottom: 20,
+    marginTop: 20,
     padding: 10,
     borderRadius: 10,
     shadowColor: "#000",

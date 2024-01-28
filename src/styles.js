@@ -3,16 +3,18 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
     colors: {
       primary: "#26944d",
+      secondary: "#9BC265"
     },
     scrollViewContainer: {
         flexGrow: 1,
         alignItems: "center",
         justifyContent: "center",
+        height: "auto"
       },
       container: {
         flex: 1,
         alignItems: "center",
-        justifyContent: "center",
+        justifyContent: "center",        
         marginBottom: 20,
         marginTop: 5,
         backgroundColor: "#fff",
@@ -26,12 +28,11 @@ export const styles = StyleSheet.create({
       },
       logoContainer: {
         //justifyContent: "center",
-        alignItems: "center",
-        marginBottom: 1,
+        alignItems: "center",        
     },
       logo: {
-        width: 300,
-        height: 100,
+        width: 200,
+        height: 80,
         resizeMode: "contain",
         //marginTop: 1,
     },

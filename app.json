@@ -2,14 +2,14 @@
   "expo": {
     "name": "impact-trip",
     "slug": "impact-trip",
-    "version": "2.0.1",
+    "version": "2.0.5",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#DFEDE9"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -18,10 +18,10 @@
       "supportsTablet": true
     },
     "android": {
-      "versionCode": 3,
+      "versionCode": 7,
       "adaptiveIcon": {
         "foregroundImage": "./assets/icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#DFEDE9"
       },
       "package": "com.atskotzen.impacttrip"
     },
