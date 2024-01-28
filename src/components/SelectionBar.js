@@ -41,9 +41,8 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     justifyContent: "space-around",
-    alignItems: "center",
-    marginTop: 3,
-    marginBottom: 15,
+    alignItems: "center",    
+    marginBottom: 5,
     backgroundColor: "#fff", // Adicione a cor desejada de fundo
     height: 43,
     width: 340,
