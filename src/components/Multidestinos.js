@@ -98,16 +98,16 @@ export default function Multidestinos() {
           </View>
         ))}
         <View style={styles.actionButtonView}>
-          {trechos.length > 0 && (
-            <View style={styles.removeButton}>
-              <Ionicons
-                name="remove-circle"
-                size={41}
-                color="red"
-                onPress={removerDestino}
-              />
-            </View>
-          )}
+        {trechos.length > 0 && (
+          <View style={styles.removeButton}>
+            <Ionicons
+              name="trash"
+              size={27}
+              color="red"
+              onPress={removerDestino}
+            />
+          </View>
+        )}
           <View style={styles.addButton}>
             <Button
               title="Adicionar conexão"
