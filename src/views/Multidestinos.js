@@ -8,7 +8,7 @@ import {
   ScrollView,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import Trecho from "./AddTrecho";
+import Trecho from "../components/AddTrecho";
 import ReportModal from "./ReportModal";
 import data from '../malha_aerea3';
 
@@ -96,7 +96,7 @@ export default function Multidestinos() {
               <Text style={styles.header}>{`#${index + 1} Trecho`}</Text>
               <View style={styles.text}>
                 <Text style={{alignSelf: "center"}}>De: {trecho.origem}</Text>
-                <Text style={{alignSelf: "center"}}>|</Text>
+                <Text style={{alignSelf: "center"}}> | </Text>
                 <Text style={{alignSelf: "center"}}>Para: {trecho.destino}</Text>
               </View>
             </View>

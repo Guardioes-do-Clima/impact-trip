@@ -9,7 +9,7 @@ import {
   StyleSheet,
   Keyboard
 } from "react-native";
-import SearchBar from "./SearchBar";
+import SearchBar from "../components/SearchBar";
 import ReportModal from "./ReportModal";
 import data from "../malha_aerea3";
 

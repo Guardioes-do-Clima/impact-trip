@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, Button, Modal, StyleSheet } from "react-native";
-import { Selo } from "./Selo";
+import { Selo } from "../components/Selo";
 
 export function ReportModal({
   reportVisible,

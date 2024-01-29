@@ -3,9 +3,9 @@ import { View } from "react-native";
 import { styles } from "../styles";
 import { Logo } from "../components/Logo";
 import SelectionBar from "../components/SelectionBar";
-import Multidestinos from "../components/Multidestinos";
-import IdaEVolta from "../components/IdaEVolta";
-import SomenteIda from "../components/SomenteIda";
+import Multidestinos from "../views/Multidestinos";
+import IdaEVolta from "../views/IdaEVolta";
+import SomenteIda from "../views/SomenteIda";
 
 export default function Airplane() {
   const [selectedComponent, setSelectedComponent] = useState("IdaEVolta");
